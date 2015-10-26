@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>DrawAccidentSketch</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.1/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="./draggabilly/dist/draggabilly.pkgd.min.js"></script>
+    <script src="./bootstrap/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link href="./stylesheets/main2.css" rel="stylesheet" />
+    <link href="./bootstrap/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="main">
+		<div class="fab btn-group show-on-hover">
+			<div id="inbox">
+				<div class="fab btn-group show-on-hover dropup">
+					<div data-toggle="tooltip" data-placement="left" title="Compose" style="margin-left: 42px;">
+						<button type="button" class="btn btn-danger btn-io dropdown-toggle" data-toggle="dropdown">
+							<span class="fa-stack fa-2x">
+								<i class="fa fa-plus fa-stack-1x fa-inverse fab-primary"></i>
+								<i class="fa fa-pencil fa-stack-1x fa-inverse fab-secondary"></i>
+							</span>
+						</button>
+					</div>
+					<ul class="dropdown-menu dropdown-menu-right" role="menu">
+						<li><a href="#" data-toggle="tooltip" data-placement="left" title="Coffee"><i class="fa fa-coffee"></i></a></li>
+						<li><a href="#" data-toggle="tooltip" data-placement="left" title="LiveChat"><i class="fa fa-comments-o"></i></a></li>
+						<li><a href="#" data-toggle="tooltip" data-placement="left" title="Reminders"><i class="fa fa-hand-o-up"></i></a></li>
+						<li><a href="#" data-toggle="tooltip" data-placement="left" title="Invites"><i class="fa fa-ticket"></i></a></li>
+					</ul>
+				</div>
+			</div>
+		</div>   
+			
+    	<div id="DivSvg"></div>
+    </div>
+</body>
+</html>
+
+<script type="text/javascript" src="./js/main2.js"></script>
+<script type="text/javascript" src="./js/d3.v3.js"></script>
+<script type="text/javascript">
+	$(function(){
+
+		$('.fab').hover(function () {
+			$(this).toggleClass('active');
+		});
+
+		var $RuleData = {
+            'height': 600,
+            'width': 1200,
+            'dom': '#DivSvg',
+            'Xcount': 10,
+            'Ycount': 10,
+        };
+
+        create_draw.init($RuleData);
+	});
+</script>

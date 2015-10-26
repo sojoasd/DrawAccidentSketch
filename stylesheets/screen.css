@@ -67,12 +67,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   display: block;
 }
 
-/* line 8, ../sass/screen.scss */
-#hidebtn {
-  display: hidden;
-}
-
-/* line 13, ../sass/screen.scss */
+/* line 9, ../sass/screen.scss */
 body .main {
   width: 1200px;
   height: 600px;
@@ -80,20 +75,20 @@ body .main {
   margin-top: 50px;
   box-shadow: 4px 4px 12px 4px rgba(51, 51, 102, 0.5);
 }
-/* line 20, ../sass/screen.scss */
+/* line 16, ../sass/screen.scss */
 body .main div {
   float: left;
 }
-/* line 24, ../sass/screen.scss */
+/* line 20, ../sass/screen.scss */
 body .main .choose-kind {
   width: 80px;
   margin-right: 3px;
 }
-/* line 28, ../sass/screen.scss */
+/* line 24, ../sass/screen.scss */
 body .main .choose-kind .kind-btn {
   float: left;
 }
-/* line 32, ../sass/screen.scss */
+/* line 28, ../sass/screen.scss */
 body .main .choose-kind .btn-sm {
   min-width: 80px;
   min-height: 70px;
@@ -109,18 +104,18 @@ body .main .choose-kind .btn-sm {
   -webkit-box-shadow: inset 0 -3px #9FE8EF;
   box-shadow: inset 0 -3px #9FE8EF;
 }
-/* line 47, ../sass/screen.scss */
+/* line 43, ../sass/screen.scss */
 body .main .choose-kind .btn-sm:active {
   top: 2px;
   outline: none;
   -webkit-box-shadow: none;
   box-shadow: none;
 }
-/* line 54, ../sass/screen.scss */
+/* line 50, ../sass/screen.scss */
 body .main .choose-kind .btn-sm:hover {
   background: #45E1E8;
 }
-/* line 60, ../sass/screen.scss */
+/* line 56, ../sass/screen.scss */
 body .main .draw-scope {
   position: relative;
   width: 1100px;
@@ -128,21 +123,21 @@ body .main .draw-scope {
   overflow: hidden;
   white-space: nowrap;
 }
-/* line 63, ../sass/screen.scss */
+/* line 59, ../sass/screen.scss */
 body .main .draw-scope:before {
   content: "";
   display: inline-block;
   height: 100%;
   vertical-align: middle;
 }
-/* line 77, ../sass/screen.scss */
+/* line 73, ../sass/screen.scss */
 body .main .draw-scope img {
   height: auto;
   width: auto;
   vertical-align: middle;
   cursor: move;
 }
-/* line 84, ../sass/screen.scss */
+/* line 80, ../sass/screen.scss */
 body .main .draw-scope #bgPic {
   position: absolute;
   z-index: 1;

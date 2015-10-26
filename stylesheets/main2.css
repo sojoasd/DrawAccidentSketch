@@ -1,0 +1,199 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+/* line 5, C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+/* line 9, ../sass/main2.scss */
+body .main {
+  position: relative;
+  width: 1200px;
+  height: 600px;
+  margin: 0 auto;
+  margin-top: 50px;
+  box-shadow: 4px 4px 12px 4px rgba(51, 51, 102, 0.5);
+}
+/* line 18, ../sass/main2.scss */
+body .main > div {
+  display: block;
+}
+/* line 22, ../sass/main2.scss */
+body .main .btn-group {
+  margin-top: 20px;
+  left: -0.8%;
+}
+/* line 27, ../sass/main2.scss */
+body .main .fab {
+  cursor: pointer;
+}
+/* line 31, ../sass/main2.scss */
+body .main .fab #inbox .show-on-hover {
+  position: absolute;
+}
+/* line 34, ../sass/main2.scss */
+body .main .fab #inbox .show-on-hover:hover > ul.dropdown-menu {
+  display: block;
+}
+/* line 39, ../sass/main2.scss */
+body .main .fab #inbox .btn-io {
+  border-radius: 50%;
+  height: 54px;
+  width: 54px;
+  padding: 0 !important;
+  box-shadow: 0px 3px 7px 0px rgba(202, 124, 124, 0.72);
+}
+/* line 47, ../sass/main2.scss */
+body .main .fab #inbox .dropup .dropdown-menu, body .main .fab #inbox .navbar-fixed-bottom .dropdown .dropdown-menu {
+  bottom: auto;
+  margin-bottom: 1px;
+  margin-bottom: -5px;
+  padding-bottom: 30px;
+}
+/* line 54, ../sass/main2.scss */
+body .main .fab #inbox .dropdown-menu-right {
+  right: 0 !Important;
+  left: auto !Important;
+}
+/* line 59, ../sass/main2.scss */
+body .main .fab #inbox .dropdown-menu {
+  position: absolute;
+  top: 100%;
+  min-width: 50px;
+  padding: 5px 0;
+  margin: 2px 0 0;
+  font-size: 14px;
+  text-align: center;
+  list-style: none;
+  background-color: rgba(255, 255, 255, 0) !important;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  border: none;
+  border-radius: 0px;
+  -webkit-box-shadow: 0 6px 12px transparent !important;
+  box-shadow: 0 6px 12px transparent !important;
+}
+/* line 76, ../sass/main2.scss */
+body .main .fab #inbox .dropdown-menu > li > a {
+  display: block;
+  padding: 0;
+  padding-top: 4px;
+  margin-top: 20px;
+  clear: both;
+  font-weight: normal;
+  line-height: 1.42857143;
+  color: #333;
+  background: #fff;
+  white-space: nowrap;
+  width: 40px;
+  height: 40px;
+  border: solid 1px #ccc;
+  border-radius: 50px;
+  font-size: 21px;
+  box-shadow: 0px 3px 7px 0px rgba(203, 203, 203, 0.72);
+}
+/* line 95, ../sass/main2.scss */
+body .main .fab #inbox .dropdown-menu > li:first-child > a {
+  background: #6E4320 !important;
+  color: #fff !important;
+}
+/* line 100, ../sass/main2.scss */
+body .main .fab #inbox .dropdown-menu > li:last-child > a {
+  background: #D3A516;
+  color: #fff;
+}
+/* line 105, ../sass/main2.scss */
+body .main .fab #inbox .dropdown-menu > li:nth-child(3) > a {
+  background: #3C80F6;
+  color: #fff;
+}
+/* line 110, ../sass/main2.scss */
+body .main .fab #inbox .dropdown-menu > li:nth-child(2) > a {
+  background: #2CAC26;
+  color: #fff;
+}
+/* line 116, ../sass/main2.scss */
+body .main .fab #inbox .fa-iox {
+  font-size: 22px;
+}
+/* line 123, ../sass/main2.scss */
+body .main .fab.active .fab-primary {
+  opacity: 0;
+  transform: rotate(225deg);
+}
+/* line 128, ../sass/main2.scss */
+body .main .fab.active .fab-secondary {
+  opacity: 1;
+  transform: rotate(0);
+}
+/* line 134, ../sass/main2.scss */
+body .main .fab .fab-primary, body .main .fab .fab-secondary {
+  transition: all 0.35s ease-in-out;
+}
+/* line 138, ../sass/main2.scss */
+body .main .fab .fab-secondary {
+  opacity: 0;
+  transform: rotate(-225deg);
+}
