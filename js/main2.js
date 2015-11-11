@@ -25,7 +25,7 @@ var create_draw = function() {
 				"height": _height
 			})
 			.style({
-				'border': '1px solid #000'
+				'border': '0px solid #000'
 			});
 	};
 
@@ -78,8 +78,22 @@ var create_draw = function() {
 			});
 	};
 
+	// 更新 Grid 的線條
+	var refresh_Grid_line = function() {
+		_svg.select('.xAxisGrid')
+			.transition()
+			.duration(700)
+			.call(_xAxisGrid);
+
+		_svg.select('.yAxisGrid')
+			.transition()
+			.duration(700)
+			.call(_yAxisGrid);
+	};
+
 	return {
 		init: function($RuleData) {
+			// console.log($RuleData);
 			_domName = $RuleData.dom;
 			_width = $RuleData.width;
 			_height = $RuleData.height;
@@ -90,6 +104,13 @@ var create_draw = function() {
 			create_scale();
 			create_svg_frame();
 			create_XY_Grid();
+
+			// timer = window.setTimeout(function() {
+			// 	_width = 800;
+			// 	_height = 500;
+			// 	create_svg_frame();
+			// 	refresh_Grid_line();
+			// }, 1500);
 		}
 	}
 }();

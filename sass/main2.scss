@@ -6,142 +6,134 @@
 @import "compass/reset";
 
 body {
-	.main {
-		position: relative;
+	
+	height: 100vh;
+	width: 100%;
+	
+	overflow: hidden;
+	
+	.btn-group {
+		display: block;
+		bottom: -40px;
+		left: -0.5%;
+	}
 
-		width: 1200px;
-		height: 600px;
-		margin: 0 auto;
-		margin-top: 50px;
-		box-shadow:4px 4px 12px 4px rgba(20%,20%,40%,0.5);
+	.fab {
+		cursor: pointer;
 
-		> div {
-			display: block;
-		}
+		#inbox {
+			.show-on-hover {
+				position: absolute;
 
-		.btn-group {
-			margin-top: 20px;
-			left: -0.8%;
-		}
-
-		.fab {
-			cursor: pointer;
-
-			#inbox {
-				.show-on-hover {
-					position: absolute;
-
-					&:hover > ul.dropdown-menu {
-						display: block;
-					}
-				}
-
-				.btn-io{
-					border-radius: 50%;
-					height: 54px;
-					width: 54px;
-					padding: 0 !important;
-					box-shadow: 0px 3px 7px 0px rgba(202, 124, 124, 0.72);
-				}
-
-				.dropup .dropdown-menu, .navbar-fixed-bottom .dropdown .dropdown-menu {
-					bottom: auto;
-					margin-bottom: 1px;
-					margin-bottom: -5px;
-					padding-bottom: 30px;
-				}
-
-				.dropdown-menu-right {
-					right: 0 !Important;
-					left: auto !Important;
-				}
-
-				.dropdown-menu {
-					position: absolute;
-					top: 100%;
-					min-width: 50px;
-					padding: 5px 0;
-					margin: 2px 0 0;
-					font-size: 14px;
-					text-align: center;
-					list-style: none;
-					background-color: rgba(255, 255, 255, 0) !Important;
-					-webkit-background-clip: padding-box;
-					background-clip: padding-box;
-					border: none;
-					border-radius: 0px;
-					-webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0) !Important;
-					box-shadow: 0 6px 12px rgba(0, 0, 0, 0) !Important;
-
-					> li > a {
-						display: block;
-						padding: 0;
-						padding-top: 4px;
-						margin-top: 20px;
-						clear: both;
-						font-weight: normal;
-						line-height: 1.42857143;
-						color: #333;
-						background: #fff;
-						white-space: nowrap;
-						width: 40px;
-						height: 40px;
-						border: solid 1px #ccc;
-						border-radius: 50px;
-						font-size: 21px;
-						box-shadow: 0px 3px 7px 0px rgba(203, 203, 203, 0.72);
-					}
-
-					> li:first-child>a {
-						background: #6E4320 !important;
-						color: #fff !important;
-					}
-
-					> li:last-child>a {
-						background: #D3A516;
-						color: #fff;
-					}
-
-					> li:nth-child(3)>a {
-						background: #3C80F6;
-						color: #fff;
-					}
-
-					> li:nth-child(2)>a {
-						background: #2CAC26;
-						color: #fff;
-					}
-				}
-
-				.fa-iox{
-					font-size: 22px;
-				}
-
-			}
-
-			&.active {
-				.fab-primary {
-					opacity: 0;
-						transform: rotate(225deg);
-				}
-
-				.fab-secondary {
-					opacity: 1;
-					transform: rotate(0);
+				&:hover > ul.dropdown-menu {
+					display: block;
 				}
 			}
 
-			.fab-primary, .fab-secondary {
-				transition: all 0.35s ease-in-out;
+			.btn-io{
+				border-radius: 50%;
+				height: 54px;
+				width: 54px;
+				padding: 0 !important;
+				box-shadow: 0px 3px 7px 0px rgba(202, 124, 124, 0.72);
+			}
+
+			.dropup .dropdown-menu, .navbar-fixed-bottom .dropdown .dropdown-menu {
+				bottom: auto;
+				margin-bottom: 1px;
+				margin-bottom: -5px;
+				padding-bottom: 30px;
+			}
+
+			.dropdown-menu-right {
+				right: 0 !Important;
+				left: auto !Important;
+			}
+
+			.dropdown-menu {
+				position: absolute;
+				top: 100%;
+				min-width: 50px;
+				padding: 5px 0;
+				margin: 2px 0 0;
+				font-size: 14px;
+				text-align: center;
+				list-style: none;
+				background-color: rgba(255, 255, 255, 0) !Important;
+				-webkit-background-clip: padding-box;
+				background-clip: padding-box;
+				border: none;
+				border-radius: 0px;
+				-webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0) !Important;
+				box-shadow: 0 6px 12px rgba(0, 0, 0, 0) !Important;
+
+				> li > a {
+					display: block;
+					padding: 0;
+					padding-top: 4px;
+					margin-top: 20px;
+					clear: both;
+					font-weight: normal;
+					line-height: 1.42857143;
+					color: #333;
+					background: #fff;
+					white-space: nowrap;
+					width: 40px;
+					height: 40px;
+					border: solid 1px #ccc;
+					border-radius: 50px;
+					font-size: 21px;
+					box-shadow: 0px 3px 7px 0px rgba(203, 203, 203, 0.72);
+				}
+
+				> li:first-child>a {
+					background: #0066FF !important;
+					color: #fff !important;
+				}
+
+				> li:last-child>a {
+					background: #FFAA33;
+					color: #fff;
+				}
+
+				> li:nth-child(3)>a {
+					background: #000000;
+					color: #fff;
+				}
+
+				> li:nth-child(2)>a {
+					background: #2CAC26;
+					color: #fff;
+				}
+			}
+
+			.fa-iox{
+				font-size: 22px;
+			}
+
+		}
+
+		&.active {
+			.fab-primary {
+				opacity: 0;
+					transform: rotate(225deg);
 			}
 
 			.fab-secondary {
-				opacity: 0;
-				transform: rotate(-225deg);
+				opacity: 1;
+				transform: rotate(0);
 			}
-
 		}
-		
+
+		.fab-primary, .fab-secondary {
+			transition: all 0.35s ease-in-out;
+		}
+
+		.fab-secondary {
+			opacity: 0;
+			transform: rotate(-225deg);
+		}
 
 	}
+		
 }
