@@ -11,6 +11,7 @@
 	<script src="./bootstrap/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 	<link href="./stylesheets/main2.css" rel="stylesheet" />
+	<link href="./stylesheets/sliderbar.css" rel="stylesheet" />
 	<link href="./bootstrap/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
@@ -36,6 +37,10 @@
 			</div>
 		</div>
 	</div>
+	
+	<div class="DivSilderbar">
+		<div class="silder-bar"></div>
+	</div>
 
 	<div id="DivSvg"></div>
 
@@ -45,9 +50,11 @@
 
 <script type="text/javascript" src="./js/main2.js"></script>
 <script type="text/javascript" src="./js/d3.v3.js"></script>
+<script type="text/javascript" src="./js/sliderbar.js"></script>
 <script type="text/javascript">
 	$(function(){
-
+		// console.log($('.silder-bar').data( "percents").perX);
+		
 		$('.fab').hover(function () {
 			$(this).toggleClass('active');
 		});

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta charset="utf-8" />
+	<title>sliderbar</title>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.1/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="./draggabilly/dist/draggabilly.pkgd.min.js"></script>
+	<link href="./stylesheets/sliderbar.css" rel="stylesheet" />
+</head>
+
+<body>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<div class="silder-bar">
+		
+	</div>
+</body>
+
+</html>
+
+<script type="text/javascript">
+	$(function(){
+		
+		$('.silder-bar').data( "percents", {perX:123} );
+		$('.silder-bar').append('<div class="silder-bar-bg"><div class="silder-bar-lines"></div><div class="silder-bar-circles"></div></div><div class="slider-tips"></div>');
+		
+		var $draggable = $('.silder-bar-circles').draggabilly({
+								axis: 'x',
+								containment: true
+							});
+							
+		var draggie = $draggable.data('draggabilly');
+		
+		var _circlesTimer;
+		$('.silder-bar-circles').on({
+			mousedown: function() {
+				var $el = $(this).parent().parent().find('.slider-tips');
+				$el.html(" " + (100 + (draggie.position.x / 500).toFixed(2)*100) + " % ");
+				$el.css({'opacity':1.0});
+				$el.show();
+			},
+			mouseover: function() {
+				var $el = $(this).parent().parent().find('.slider-tips');
+				$el.html(" " + (100 + (draggie.position.x / 500).toFixed(2)*100) + " % ");
+				$el.css({'opacity':1.0});
+				$el.show();
+			},
+			mouseleave: function() {
+				window.clearTimeout(_circlesTimer);
+				var $el = $(this).parent().parent().find('.slider-tips');
+				$el.html(" " + (100 + (draggie.position.x / 500).toFixed(2)*100) + " % ");
+				_circlesTimer = window.setTimeout(function(){
+					$el.fadeTo(1000,0.0, function(){$el.hide();});
+				},3000); 
+			},
+		});
+		
+		$('.silder-bar-lines').on({
+			click: function(e){
+				var nowX = draggie.position.x;
+				var goalX = e.offsetX;
+				var moveLeft = goalX - nowX; 
+				// console.log('nowX:'+nowX + ' ; goalX:' + goalX + ' ; moveLeft:'+moveLeft); 
+				draggie.position.x = goalX;
+				$('.silder-bar-circles').css({'left': nowX+moveLeft});
+			}
+		});
+		
+	});
+
+</script>

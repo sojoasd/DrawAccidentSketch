@@ -6,11 +6,17 @@
 @import "compass/reset";
 
 body {
-	
+	position: relative;
 	height: 100vh;
 	width: 100%;
-	
 	overflow: hidden;
+	
+	.DivSilderbar {
+		position: absolute;
+		display: inline-block;
+		bottom: 3%;
+		left: 2%;
+	}
 	
 	.btn-group {
 		display: block;

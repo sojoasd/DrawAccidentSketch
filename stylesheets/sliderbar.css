@@ -1,0 +1,146 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+/* line 5, C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+/* line 11, ../sass/sliderbar.scss */
+.silder-bar .silder-bar-bg {
+  float: left;
+  position: relative;
+  width: 500px;
+  height: 30px;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  padding-right: 20px;
+}
+/* line 21, ../sass/sliderbar.scss */
+.silder-bar .silder-bar-bg:before {
+  content: '';
+  display: inline-block;
+  vertical-align: middle;
+  height: 100%;
+  width: 0;
+}
+/* line 29, ../sass/sliderbar.scss */
+.silder-bar .silder-bar-bg .silder-bar-lines {
+  width: 100%;
+  height: 10px;
+  display: inline-block;
+  vertical-align: middle;
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuMCIgeTE9IjAuNSIgeDI9IjEuMCIgeTI9IjAuNSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZlZGNhYSIvPjxzdG9wIG9mZnNldD0iMjUlIiBzdG9wLWNvbG9yPSIjZmVkY2FhIi8+PHN0b3Agb2Zmc2V0PSIyNSUiIHN0b3AtY29sb3I9IiNmY2M4OTYiLz48c3RvcCBvZmZzZXQ9IjUwJSIgc3RvcC1jb2xvcj0iI2ZjYzg5NiIvPjxzdG9wIG9mZnNldD0iNTAlIiBzdG9wLWNvbG9yPSIjZmNiNDY0Ii8+PHN0b3Agb2Zmc2V0PSI3NSUiIHN0b3AtY29sb3I9IiNmY2I0NjQiLz48c3RvcCBvZmZzZXQ9Ijc1JSIgc3RvcC1jb2xvcj0iI2Y4OTYwMCIvPjxzdG9wIG9mZnNldD0iODAlIiBzdG9wLWNvbG9yPSIjZjg5NjAwIi8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmFkKSIgLz48L3N2Zz4g');
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, #fedcaa), color-stop(25%, #fedcaa), color-stop(25%, #fcc896), color-stop(50%, #fcc896), color-stop(50%, #fcb464), color-stop(75%, #fcb464), color-stop(75%, #f89600), color-stop(80%, #f89600));
+  background-image: -moz-linear-gradient(left, #fedcaa 0%, #fedcaa 25%, #fcc896 25%, #fcc896 50%, #fcb464 50%, #fcb464 75%, #f89600 75%, #f89600 80%);
+  background-image: -webkit-linear-gradient(left, #fedcaa 0%, #fedcaa 25%, #fcc896 25%, #fcc896 50%, #fcb464 50%, #fcb464 75%, #f89600 75%, #f89600 80%);
+  background-image: linear-gradient(to right, #fedcaa 0%, #fedcaa 25%, #fcc896 25%, #fcc896 50%, #fcb464 50%, #fcb464 75%, #f89600 75%, #f89600 80%);
+}
+/* line 40, ../sass/sliderbar.scss */
+.silder-bar .silder-bar-bg .silder-bar-circles {
+  position: absolute;
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHJhZGlhbEdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgY3g9IjUwJSIgY3k9IiIgcj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZjYzg5NiIvPjxzdG9wIG9mZnNldD0iNTAlIiBzdG9wLWNvbG9yPSIjZjg3ODAwIi8+PHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjZmNiNDY0Ii8+PC9yYWRpYWxHcmFkaWVudD48L2RlZnM+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmFkKSIgLz48L3N2Zz4g');
+  background-size: 100%;
+  background-image: -moz-radial-gradient(center, ellipse cover, #fcc896 0%, #f87800 50%, #fcb464 100%);
+  background-image: -webkit-radial-gradient(center, ellipse cover, #fcc896 0%, #f87800 50%, #fcb464 100%);
+  background-image: radial-gradient(ellipse cover at center, #fcc896 0%, #f87800 50%, #fcb464 100%);
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  bottom: 5px;
+  top: initial !important;
+}
+/* line 51, ../sass/sliderbar.scss */
+.silder-bar .slider-tips {
+  float: left;
+  background: #f89600;
+  height: 30px;
+  margin-left: 10px;
+  text-align: center;
+  white-space: nowrap;
+  position: relative;
+  display: none;
+  padding: 0 5px 0 5px;
+}
+/* line 62, ../sass/sliderbar.scss */
+.silder-bar .slider-tips:before {
+  content: '';
+  display: inline-block;
+  vertical-align: middle;
+  height: 100%;
+  width: 0;
+}
+/* line 70, ../sass/sliderbar.scss */
+.silder-bar .slider-tips:after {
+  border-right: solid 10px #f89600;
+  border-top: solid 7px transparent;
+  border-bottom: solid 7px transparent;
+  content: "";
+  display: block;
+  position: absolute;
+  left: -10px;
+  bottom: 10px;
+}
