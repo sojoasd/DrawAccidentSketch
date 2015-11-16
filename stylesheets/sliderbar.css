@@ -68,6 +68,13 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 }
 
 /* line 11, ../sass/sliderbar.scss */
+.silder-bar .slider-margin-left {
+  float: left;
+  height: 30px;
+  width: 30px;
+  opacity: 0;
+}
+/* line 19, ../sass/sliderbar.scss */
 .silder-bar .silder-bar-bg {
   float: left;
   position: relative;
@@ -78,7 +85,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   overflow: hidden;
   padding-right: 20px;
 }
-/* line 21, ../sass/sliderbar.scss */
+/* line 29, ../sass/sliderbar.scss */
 .silder-bar .silder-bar-bg:before {
   content: '';
   display: inline-block;
@@ -86,7 +93,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   height: 100%;
   width: 0;
 }
-/* line 29, ../sass/sliderbar.scss */
+/* line 37, ../sass/sliderbar.scss */
 .silder-bar .silder-bar-bg .silder-bar-lines {
   width: 100%;
   height: 10px;
@@ -99,7 +106,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   background-image: -webkit-linear-gradient(left, #fedcaa 0%, #fedcaa 25%, #fcc896 25%, #fcc896 50%, #fcb464 50%, #fcb464 75%, #f89600 75%, #f89600 80%);
   background-image: linear-gradient(to right, #fedcaa 0%, #fedcaa 25%, #fcc896 25%, #fcc896 50%, #fcb464 50%, #fcb464 75%, #f89600 75%, #f89600 80%);
 }
-/* line 40, ../sass/sliderbar.scss */
+/* line 48, ../sass/sliderbar.scss */
 .silder-bar .silder-bar-bg .silder-bar-circles {
   position: absolute;
   background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHJhZGlhbEdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgY3g9IjUwJSIgY3k9IiIgcj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZjYzg5NiIvPjxzdG9wIG9mZnNldD0iNTAlIiBzdG9wLWNvbG9yPSIjZjg3ODAwIi8+PHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjZmNiNDY0Ii8+PC9yYWRpYWxHcmFkaWVudD48L2RlZnM+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmFkKSIgLz48L3N2Zz4g');
@@ -107,13 +114,13 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   background-image: -moz-radial-gradient(center, ellipse cover, #fcc896 0%, #f87800 50%, #fcb464 100%);
   background-image: -webkit-radial-gradient(center, ellipse cover, #fcc896 0%, #f87800 50%, #fcb464 100%);
   background-image: radial-gradient(ellipse cover at center, #fcc896 0%, #f87800 50%, #fcb464 100%);
-  width: 20px;
-  height: 20px;
+  width: 25px;
+  height: 25px;
   border-radius: 50%;
-  bottom: 5px;
+  bottom: 3px;
   top: initial !important;
 }
-/* line 51, ../sass/sliderbar.scss */
+/* line 61, ../sass/sliderbar.scss */
 .silder-bar .slider-tips {
   float: left;
   background: #f89600;
@@ -122,10 +129,10 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   text-align: center;
   white-space: nowrap;
   position: relative;
-  display: none;
+  opacity: 0;
   padding: 0 5px 0 5px;
 }
-/* line 62, ../sass/sliderbar.scss */
+/* line 73, ../sass/sliderbar.scss */
 .silder-bar .slider-tips:before {
   content: '';
   display: inline-block;
@@ -133,7 +140,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   height: 100%;
   width: 0;
 }
-/* line 70, ../sass/sliderbar.scss */
+/* line 81, ../sass/sliderbar.scss */
 .silder-bar .slider-tips:after {
   border-right: solid 10px #f89600;
   border-top: solid 7px transparent;

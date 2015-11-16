@@ -6,22 +6,29 @@
 @import "compass/reset";
 
 body {
+	
 	position: relative;
-	height: 100vh;
-	width: 100%;
+	height: 1000vh;
+	width: 1000%;
 	overflow: hidden;
+	
+	#DivSvg {
+		// background: salmon;
+	}
 	
 	.DivSilderbar {
 		position: absolute;
-		display: inline-block;
-		bottom: 3%;
-		left: 2%;
+		display: block;
+		top: 95vh;
+		// left: 0.2%;
+		z-index: 99999999;
 	}
 	
 	.btn-group {
 		display: block;
 		bottom: -40px;
-		left: -0.5%;
+		// left: 1%;
+		z-index: 99999999;
 	}
 
 	.fab {

@@ -70,36 +70,36 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 /* line 8, ../sass/main2.scss */
 body {
   position: relative;
-  height: 100vh;
-  width: 100%;
+  height: 1000vh;
+  width: 1000%;
   overflow: hidden;
 }
-/* line 14, ../sass/main2.scss */
+/* line 19, ../sass/main2.scss */
 body .DivSilderbar {
   position: absolute;
-  display: inline-block;
-  bottom: 3%;
-  left: 2%;
+  display: block;
+  top: 95vh;
+  z-index: 99999999;
 }
-/* line 21, ../sass/main2.scss */
+/* line 27, ../sass/main2.scss */
 body .btn-group {
   display: block;
   bottom: -40px;
-  left: -0.5%;
+  z-index: 99999999;
 }
-/* line 27, ../sass/main2.scss */
+/* line 34, ../sass/main2.scss */
 body .fab {
   cursor: pointer;
 }
-/* line 31, ../sass/main2.scss */
+/* line 38, ../sass/main2.scss */
 body .fab #inbox .show-on-hover {
   position: absolute;
 }
-/* line 34, ../sass/main2.scss */
+/* line 41, ../sass/main2.scss */
 body .fab #inbox .show-on-hover:hover > ul.dropdown-menu {
   display: block;
 }
-/* line 39, ../sass/main2.scss */
+/* line 46, ../sass/main2.scss */
 body .fab #inbox .btn-io {
   border-radius: 50%;
   height: 54px;
@@ -107,19 +107,19 @@ body .fab #inbox .btn-io {
   padding: 0 !important;
   box-shadow: 0px 3px 7px 0px rgba(202, 124, 124, 0.72);
 }
-/* line 47, ../sass/main2.scss */
+/* line 54, ../sass/main2.scss */
 body .fab #inbox .dropup .dropdown-menu, body .fab #inbox .navbar-fixed-bottom .dropdown .dropdown-menu {
   bottom: auto;
   margin-bottom: 1px;
   margin-bottom: -5px;
   padding-bottom: 30px;
 }
-/* line 54, ../sass/main2.scss */
+/* line 61, ../sass/main2.scss */
 body .fab #inbox .dropdown-menu-right {
   right: 0 !Important;
   left: auto !Important;
 }
-/* line 59, ../sass/main2.scss */
+/* line 66, ../sass/main2.scss */
 body .fab #inbox .dropdown-menu {
   position: absolute;
   top: 100%;
@@ -137,7 +137,7 @@ body .fab #inbox .dropdown-menu {
   -webkit-box-shadow: 0 6px 12px transparent !important;
   box-shadow: 0 6px 12px transparent !important;
 }
-/* line 76, ../sass/main2.scss */
+/* line 83, ../sass/main2.scss */
 body .fab #inbox .dropdown-menu > li > a {
   display: block;
   padding: 0;
@@ -156,45 +156,45 @@ body .fab #inbox .dropdown-menu > li > a {
   font-size: 21px;
   box-shadow: 0px 3px 7px 0px rgba(203, 203, 203, 0.72);
 }
-/* line 95, ../sass/main2.scss */
+/* line 102, ../sass/main2.scss */
 body .fab #inbox .dropdown-menu > li:first-child > a {
   background: #0066FF !important;
   color: #fff !important;
 }
-/* line 100, ../sass/main2.scss */
+/* line 107, ../sass/main2.scss */
 body .fab #inbox .dropdown-menu > li:last-child > a {
   background: #FFAA33;
   color: #fff;
 }
-/* line 105, ../sass/main2.scss */
+/* line 112, ../sass/main2.scss */
 body .fab #inbox .dropdown-menu > li:nth-child(3) > a {
   background: #000000;
   color: #fff;
 }
-/* line 110, ../sass/main2.scss */
+/* line 117, ../sass/main2.scss */
 body .fab #inbox .dropdown-menu > li:nth-child(2) > a {
   background: #2CAC26;
   color: #fff;
 }
-/* line 116, ../sass/main2.scss */
+/* line 123, ../sass/main2.scss */
 body .fab #inbox .fa-iox {
   font-size: 22px;
 }
-/* line 123, ../sass/main2.scss */
+/* line 130, ../sass/main2.scss */
 body .fab.active .fab-primary {
   opacity: 0;
   transform: rotate(225deg);
 }
-/* line 128, ../sass/main2.scss */
+/* line 135, ../sass/main2.scss */
 body .fab.active .fab-secondary {
   opacity: 1;
   transform: rotate(0);
 }
-/* line 134, ../sass/main2.scss */
+/* line 141, ../sass/main2.scss */
 body .fab .fab-primary, body .fab .fab-secondary {
   transition: all 0.35s ease-in-out;
 }
-/* line 138, ../sass/main2.scss */
+/* line 145, ../sass/main2.scss */
 body .fab .fab-secondary {
   opacity: 0;
   transform: rotate(-225deg);

@@ -8,6 +8,14 @@
 
 .silder-bar {
 	
+	.slider-margin-left {
+		float: left;
+		height: 30px;
+		width: 30px;
+		opacity: 0;
+		// background: rgba(248,150,0,1);
+	}
+	
 	.silder-bar-bg {
 		float: left;
 		position: relative;
@@ -40,13 +48,15 @@
 		.silder-bar-circles {
 			position: absolute;
 			@include background-image(radial-gradient(center, ellipse cover, rgba(252,200,150,1) 0%, rgba(248,120,0,1) 50%, rgba(252,180,100,1) 100%));
-			width: 20px;
-			height: 20px;
+			width: 25px;
+			height: 25px;
 			border-radius: 50%;
-			bottom: 5px;
+			bottom: 3px;
 			top: initial !important;
 		}
 	}
+	
+	
 	
 	.slider-tips {
 		float: left;
@@ -56,7 +66,8 @@
 		text-align: center;
 		white-space: nowrap;
 		position: relative; // prepare to create ballon
-		display: none;
+		// display: none;
+		opacity: 0;
 		padding: 0 5px 0 5px;
 		
 		&:before {

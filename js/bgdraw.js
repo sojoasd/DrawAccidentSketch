@@ -1,5 +1,5 @@
 var create_draw = function() {
-
+	
 	var _domName;
 	var _svg;
 
@@ -8,8 +8,8 @@ var create_draw = function() {
 
 	var _scaleX;
 	var _scaleY;
-	var _xAxis;
-	var _yAxis;
+	// var _xAxis;
+	// var _yAxis;
 	var _Xcount;
 	var _Ycount;
 	var _yAxisGrid; // 背景格線
@@ -83,11 +83,13 @@ var create_draw = function() {
 		_svg.select('.xAxisGrid')
 			.transition()
 			.duration(700)
+			.attr({'transform': 'translate(' + 0 + ',' + _height + ')'})
 			.call(_xAxisGrid);
 
 		_svg.select('.yAxisGrid')
 			.transition()
 			.duration(700)
+			.attr({'transform': 'translate(' + 0 + ',' + 0 + ')'})
 			.call(_yAxisGrid);
 	};
 
@@ -100,17 +102,30 @@ var create_draw = function() {
 			_Xcount = $RuleData.Xcount;
 			_Ycount = $RuleData.Ycount;
 
-			create_svg(_domName);
+			create_svg();
 			create_scale();
 			create_svg_frame();
 			create_XY_Grid();
 
 			// timer = window.setTimeout(function() {
-			// 	_width = 800;
-			// 	_height = 500;
+			// 	_width = 1500;
+			// 	_height = 1000;
+			// 	_svg.style("width", _width).style("height", _height);
 			// 	create_svg_frame();
 			// 	refresh_Grid_line();
 			// }, 1500);
+		},
+		changes: function(newW, newH, Xcount, Ycount){
+			_width = newW;
+			_height = newH;
+			_Xcount = Xcount;
+			_Ycount = Ycount;
+			
+			_svg.attr("width", newW).attr("height", newH);
+			// $('.svgclass').remove();
+			create_scale();
+			create_svg_frame();
+			refresh_Grid_line();
 		}
 	}
 }();

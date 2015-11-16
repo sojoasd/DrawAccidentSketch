@@ -37,7 +37,7 @@
 			</div>
 		</div>
 	</div>
-	
+
 	<div class="DivSilderbar">
 		<div class="silder-bar"></div>
 	</div>
@@ -48,29 +48,70 @@
 
 </html>
 
-<script type="text/javascript" src="./js/main2.js"></script>
+<script type="text/javascript" src="./js/bgdraw.js"></script>
 <script type="text/javascript" src="./js/d3.v3.js"></script>
 <script type="text/javascript" src="./js/sliderbar.js"></script>
 <script type="text/javascript">
 	$(function(){
-		// console.log($('.silder-bar').data( "percents").perX);
+		
+		var _oriw;
+		var _orih;
+		var _initCountX;
+		var _initCountY;
+		
+		var _mainTimer;
 		
 		$('.fab').hover(function () {
 			$(this).toggleClass('active');
 		});
 
-		var w = $('body')[0].clientWidth;
-		var h = $('body')[0].clientHeight;
+		_oriw = $('body')[0].clientWidth;
+		_orih = $('body')[0].clientHeight;
+		_initCountX = Math.round(_oriw/10);
+		_initCountY = Math.round(_orih/10);
 
 		var $RuleData = {
-            'height': h,
-            'width': w,
+            'height': _orih,
+            'width': _oriw,
             'dom': '#DivSvg',
-            'Xcount': Math.round(w/20),
-            'Ycount': Math.round(h/20),
+            'Xcount': Math.round(_initCountX),
+            'Ycount': Math.round(_initCountY),
         };
-
+		
         create_draw.init($RuleData);
+		
+		$('#DivSvg').draggabilly();
+		
+		// 取得 sliderbar 的結果
+		$('.DivSilderbar').on({
+			mouseover: function(e){
+				window.clearTimeout(_mainTimer);
+				_mainTimer = window.setTimeout(function(){
+					var perX = $('.silder-bar').data( "percents").perX;
+					// console.log((perX / 100));
+					var w = _oriw * (perX / 100);
+					var h = _orih * (perX / 100);
+					$('body').css({ 'width':w, 'height':h });
+					create_draw.changes(w, h, _initCountX, _initCountY);
+					$('#DivSvg').css({
+						'left': 0,
+						'top': 0
+					});
+					
+					$('#DivSvg').css({
+						'left': (screen.width - w) / 2,
+						'top': (screen.height - h) / 2
+					});
+				},2000);
+			}
+		});
+		
+		$('#DivSvg').css({
+			'left': (screen.width - _oriw) / 2,
+			'top': (screen.height - _orih) / 2
+		});
+		
+		
 	});
 
 </script>
