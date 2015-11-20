@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta charset="utf-8" />
+	<title>CallbackTest</title>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.1/jquery-ui.min.js"></script>
+</head>
+<body>
+	
+</body>
+</html>
+<script>
+	$(function(){
+		
+		//第一種 callback 用法
+		// var Test = function(){
+		// 	
+		// 	this.CallBackFunction;
+		// 	
+		// 	this.dowork = function(options){
+		// 		var data = {'Num':'1'};
+		// 		options.CallBackFunction(data);
+		// 	};
+		// };
+		// 
+		// var callbackfunc = function(data){
+		// 	console.log(data);
+		// };
+		// 
+		// var obj = new Test();
+		// obj.dowork({CallBackFunction:callbackfunc});
+		
+		//第一種變形
+		var Test = function(){
+			
+			this.CallBackFunction;
+			
+			this.dowork = function(options){
+				var data = {'Num':'1'};
+				options.CallBackFunction(data);
+			};
+		};
+		
+		var obj = new Test();
+		obj.dowork({CallBackFunction:function(data){
+			console.log(data);
+		}});
+		
+		
+		//第二種 callback 用法
+		// var Test2 = function(arrName, callback){
+		// 	var arrFunc = [];
+		// 	for(var i = 0; i < arrName.length; i++){
+		// 		arrFunc[i] = callback("My name is " + arrName[i]);
+		// 	}
+		// };
+		// 
+		// var showName = function(obj){
+		// 	console.log(obj);
+		// };
+		// 
+		// Test2(['dPP','Qoo','sGG'], showName);
+		
+		//第二種變形
+		// var Test2 = function(arrName, callback){
+		// 	var arrFunc = [];
+		// 	for(var i = 0; i < arrName.length; i++){
+		// 		arrFunc[i] = callback("My name is " + arrName[i]);
+		// 	}
+		// };
+		// 
+		// Test2(['dPP','Qoo','sGG'], function(obj){
+		// 	console.log(obj);
+		// });
+		
+	});
+</script>

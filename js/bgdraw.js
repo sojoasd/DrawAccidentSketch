@@ -122,7 +122,6 @@ var create_draw = function() {
 			_Ycount = Ycount;
 			
 			_svg.attr("width", newW).attr("height", newH);
-			// $('.svgclass').remove();
 			create_scale();
 			create_svg_frame();
 			refresh_Grid_line();

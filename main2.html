@@ -20,7 +20,7 @@
 	<div class="fab btn-group show-on-hover">
 		<div id="inbox">
 			<div class="fab btn-group show-on-hover dropup">
-				<div data-toggle="tooltip" data-placement="left" title="Compose" style="margin-left: 42px;">
+				<div data-toggle="tooltip" data-placement="left" title="Compose" style="">
 					<button type="button" class="btn btn-danger btn-io dropdown-toggle" data-toggle="dropdown">
 						<span class="fa-stack fa-2x">
 								<i class="fa fa-plus fa-stack-1x fa-inverse fab-primary"></i>
@@ -29,10 +29,11 @@
 					</button>
 				</div>
 				<ul class="dropdown-menu dropdown-menu-right" role="menu">
-					<li><a href="#" data-toggle="tooltip" data-placement="left" title="Coffee"><i class="fa fa-car"></i></a></li>
-					<li><a href="#" data-toggle="tooltip" data-placement="left" title="LiveChat"><i class="fa fa-male"></i></a></li>
-					<li><a href="#" data-toggle="tooltip" data-placement="left" title="Reminders"><i class="fa fa-road"></i></a></li>
-					<li><a href="#" data-toggle="tooltip" data-placement="left" title="Invites"><i class="fa fa-map-signs"></i></a></li>
+					<li><a href="#" data-toggle="tooltip" data-placement="left" title="Car"><i class="fa fa-car"></i></a></li>
+					<li><a href="#" data-toggle="tooltip" data-placement="left" title="Person"><i class="fa fa-male"></i></a></li>
+					<li><a href="#" data-toggle="tooltip" data-placement="left" title="Road"><i class="fa fa-road"></i></a></li>
+					<li><a href="#" data-toggle="tooltip" data-placement="left" title="Sign"><i class="fa fa-map-signs"></i></a></li>
+					<div class="menu-bridge"></div>
 				</ul>
 			</div>
 		</div>
@@ -87,6 +88,7 @@
 			mouseover: function(e){
 				window.clearTimeout(_mainTimer);
 				_mainTimer = window.setTimeout(function(){
+					console.log($('.silder-bar').data( "percents").perX);
 					var perX = $('.silder-bar').data( "percents").perX;
 					// console.log((perX / 100));
 					var w = _oriw * (perX / 100);
@@ -109,6 +111,31 @@
 		$('#DivSvg').css({
 			'left': (screen.width - _oriw) / 2,
 			'top': (screen.height - _orih) / 2
+		});
+		
+		var tempMenuObj;
+		$('.dropdown-menu > li').click(function() {
+			if(tempMenuObj !== this) {
+				$('.dropdown-menu > li').find('a').removeClass('add-bridge');
+				tempMenuObj = this;
+				
+				$(this).find('a').toggleClass('add-bridge');
+				
+				$('.menu-content').remove();
+				
+				$(this).find('a').after('<div class="menu-content"></div>');
+				$('.menu-content').css({
+					'z-index': '99999998',
+					'width': '100%', // 用 screen width 去大概算出一列可以放幾個
+					'height': '10%',
+					'background': 'silver',
+					'position': 'absolute',
+					'margin-top': '-40px', //.dropdown-menu > li > a 的 CSS
+					'left': '200%',
+					'display': 'block'
+				});
+			}
+			
 		});
 		
 		

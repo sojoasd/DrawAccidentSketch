@@ -1,5 +1,5 @@
 
-
+$('.silder-bar').data("percents", { perX: 100 });
 
 $('.silder-bar').append('<div class="slider-margin-left"></div><div class="silder-bar-bg"><div class="silder-bar-lines"></div><div class="silder-bar-circles"></div></div><div class="slider-tips"></div>');
 

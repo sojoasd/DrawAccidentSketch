@@ -29,6 +29,10 @@ body {
 		bottom: -40px;
 		// left: 1%;
 		z-index: 99999999;
+		
+		> div {
+			margin-left: 20px;
+		}
 	}
 
 	.fab {
@@ -79,12 +83,22 @@ body {
 				border-radius: 0px;
 				-webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0) !Important;
 				box-shadow: 0 6px 12px rgba(0, 0, 0, 0) !Important;
-
+				
+				.menu-bridge {
+					position: absolute;
+					width: 200%;
+					height: 100%;
+					background: red;
+					opacity: 0.3;
+					bottom: 20px;
+					z-index: -999999;
+				}
+				
 				> li > a {
 					display: block;
 					padding: 0;
 					padding-top: 4px;
-					margin-top: 20px;
+					margin-top: 40px;
 					clear: both;
 					font-weight: normal;
 					line-height: 1.42857143;
@@ -102,21 +116,89 @@ body {
 				> li:first-child>a {
 					background: #0066FF !important;
 					color: #fff !important;
+					opacity: 0.5;
+					position: relative;
+					
+					&:hover {
+						opacity: 1.0;
+					}
+					
+					&.add-bridge:after {
+						border-left: solid 70px #0066FF;
+						border-top: solid 5px #0066FF;
+						border-bottom: solid 5px #0066FF;
+						content: "";
+						display: block;
+						position: absolute;
+						left: 90%;
+						bottom: 40%;
+					}
 				}
 
-				> li:last-child>a {
+				> li:nth-child(4)>a {
 					background: #FFAA33;
 					color: #fff;
+					opacity: 0.5;
+					position: relative;
+					
+					&:hover {
+						opacity: 1.0;
+					}
+					
+					&.add-bridge:after {
+						border-left: solid 70px #FFAA33;
+						border-top: solid 5px #FFAA33;
+						border-bottom: solid 5px #FFAA33;
+						content: "";
+						display: block;
+						position: absolute;
+						left: 90%;
+						bottom: 40%;
+					}
 				}
 
 				> li:nth-child(3)>a {
 					background: #000000;
 					color: #fff;
+					opacity: 0.5;
+					position: relative;
+					
+					&:hover {
+						opacity: 1.0;
+					}
+					
+					&.add-bridge:after {
+						border-left: solid 70px #000000;
+						border-top: solid 5px #000000;
+						border-bottom: solid 5px #000000;
+						content: "";
+						display: block;
+						position: absolute;
+						left: 90%;
+						bottom: 40%;
+					}
 				}
 
 				> li:nth-child(2)>a {
 					background: #2CAC26;
 					color: #fff;
+					opacity: 0.5;
+					position: relative;
+					
+					&:hover {
+						opacity: 1.0;
+					}
+					
+					&.add-bridge:after {
+						border-left: solid 70px #2CAC26;
+						border-top: solid 5px #2CAC26;
+						border-bottom: solid 5px #2CAC26;
+						content: "";
+						display: block;
+						position: absolute;
+						left: 90%;
+						bottom: 40%;
+					}
 				}
 			}
 
