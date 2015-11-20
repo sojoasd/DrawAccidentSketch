@@ -139,13 +139,17 @@
 						'display': 'block'
 					});
 				}
-			},
-			mouseleave: function () {
-				$('.dropdown-menu > li').find('a').removeClass('add-bridge');
-				$('.menu-content').remove();
-			},
+			}
 		});
 		
+		$('.menu-content').on('mouseleave', function(){
+			$('.menu-content').remove();
+		});
+		
+		$('.menu-bridge').on('mouseleave', function(){
+			$('.dropdown-menu > li').find('a').removeClass('add-bridge');
+			$('.menu-content').remove();
+		});
 		
 	});
 
