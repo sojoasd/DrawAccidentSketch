@@ -19,12 +19,12 @@
 	.silder-bar-bg {
 		float: left;
 		position: relative;
-		width: 500px;
+		width: 525px;
 		height: 30px;
 		text-align: center;
 		white-space: nowrap;
 		overflow: hidden;
-		padding-right: 20px;
+		padding-right: 12px;
 		
 		&:before {
 			content: '';
