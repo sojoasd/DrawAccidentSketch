@@ -146,12 +146,44 @@ body .fab #inbox .dropdown-menu .menu-bridge {
   position: absolute;
   width: 200%;
   height: 100%;
-  background: red;
   opacity: 0.3;
   bottom: 20px;
   z-index: -999999;
 }
 /* line 97, ../sass/main2.scss */
+body .fab #inbox .dropdown-menu .menu-content {
+  height: 500px;
+  background: white;
+  box-shadow: 4px 4px 12px 4px rgba(51, 51, 102, 0.5);
+  position: absolute;
+  margin-top: -40px;
+  left: 200%;
+}
+/* line 105, ../sass/main2.scss */
+body .fab #inbox .dropdown-menu .menu-content .tab-content {
+  width: auto;
+  height: auto;
+}
+/* line 109, ../sass/main2.scss */
+body .fab #inbox .dropdown-menu .menu-content .tab-content .imgstyle {
+  width: 150px;
+  height: 150px;
+  float: left;
+  margin: 20px;
+  opacity: 0.5;
+  background: #DDDDDD;
+}
+/* line 117, ../sass/main2.scss */
+body .fab #inbox .dropdown-menu .menu-content .tab-content .imgstyle:hover {
+  opacity: 1.0;
+  background: white;
+}
+/* line 122, ../sass/main2.scss */
+body .fab #inbox .dropdown-menu .menu-content .tab-content .imgstyle img {
+  max-width: 150px;
+  max-height: 150px;
+}
+/* line 130, ../sass/main2.scss */
 body .fab #inbox .dropdown-menu > li > a {
   display: block;
   padding: 0;
@@ -170,18 +202,18 @@ body .fab #inbox .dropdown-menu > li > a {
   font-size: 21px;
   box-shadow: 0px 3px 7px 0px rgba(203, 203, 203, 0.72);
 }
-/* line 116, ../sass/main2.scss */
+/* line 149, ../sass/main2.scss */
 body .fab #inbox .dropdown-menu > li:first-child > a {
   background: #0066FF !important;
   color: #fff !important;
   opacity: 0.5;
   position: relative;
 }
-/* line 122, ../sass/main2.scss */
+/* line 155, ../sass/main2.scss */
 body .fab #inbox .dropdown-menu > li:first-child > a:hover {
   opacity: 1.0;
 }
-/* line 126, ../sass/main2.scss */
+/* line 159, ../sass/main2.scss */
 body .fab #inbox .dropdown-menu > li:first-child > a.add-bridge:after {
   border-left: solid 70px #0066FF;
   border-top: solid 5px #0066FF;
@@ -192,18 +224,18 @@ body .fab #inbox .dropdown-menu > li:first-child > a.add-bridge:after {
   left: 90%;
   bottom: 40%;
 }
-/* line 138, ../sass/main2.scss */
+/* line 171, ../sass/main2.scss */
 body .fab #inbox .dropdown-menu > li:nth-child(4) > a {
   background: #FFAA33;
   color: #fff;
   opacity: 0.5;
   position: relative;
 }
-/* line 144, ../sass/main2.scss */
+/* line 177, ../sass/main2.scss */
 body .fab #inbox .dropdown-menu > li:nth-child(4) > a:hover {
   opacity: 1.0;
 }
-/* line 148, ../sass/main2.scss */
+/* line 181, ../sass/main2.scss */
 body .fab #inbox .dropdown-menu > li:nth-child(4) > a.add-bridge:after {
   border-left: solid 70px #FFAA33;
   border-top: solid 5px #FFAA33;
@@ -214,18 +246,18 @@ body .fab #inbox .dropdown-menu > li:nth-child(4) > a.add-bridge:after {
   left: 90%;
   bottom: 40%;
 }
-/* line 160, ../sass/main2.scss */
+/* line 193, ../sass/main2.scss */
 body .fab #inbox .dropdown-menu > li:nth-child(3) > a {
   background: #000000;
   color: #fff;
   opacity: 0.5;
   position: relative;
 }
-/* line 166, ../sass/main2.scss */
+/* line 199, ../sass/main2.scss */
 body .fab #inbox .dropdown-menu > li:nth-child(3) > a:hover {
   opacity: 1.0;
 }
-/* line 170, ../sass/main2.scss */
+/* line 203, ../sass/main2.scss */
 body .fab #inbox .dropdown-menu > li:nth-child(3) > a.add-bridge:after {
   border-left: solid 70px #000000;
   border-top: solid 5px #000000;
@@ -236,18 +268,18 @@ body .fab #inbox .dropdown-menu > li:nth-child(3) > a.add-bridge:after {
   left: 90%;
   bottom: 40%;
 }
-/* line 182, ../sass/main2.scss */
+/* line 215, ../sass/main2.scss */
 body .fab #inbox .dropdown-menu > li:nth-child(2) > a {
   background: #2CAC26;
   color: #fff;
   opacity: 0.5;
   position: relative;
 }
-/* line 188, ../sass/main2.scss */
+/* line 221, ../sass/main2.scss */
 body .fab #inbox .dropdown-menu > li:nth-child(2) > a:hover {
   opacity: 1.0;
 }
-/* line 192, ../sass/main2.scss */
+/* line 225, ../sass/main2.scss */
 body .fab #inbox .dropdown-menu > li:nth-child(2) > a.add-bridge:after {
   border-left: solid 70px #2CAC26;
   border-top: solid 5px #2CAC26;
@@ -258,25 +290,25 @@ body .fab #inbox .dropdown-menu > li:nth-child(2) > a.add-bridge:after {
   left: 90%;
   bottom: 40%;
 }
-/* line 205, ../sass/main2.scss */
+/* line 238, ../sass/main2.scss */
 body .fab #inbox .fa-iox {
   font-size: 22px;
 }
-/* line 212, ../sass/main2.scss */
+/* line 245, ../sass/main2.scss */
 body .fab.active .fab-primary {
   opacity: 0;
   transform: rotate(225deg);
 }
-/* line 217, ../sass/main2.scss */
+/* line 250, ../sass/main2.scss */
 body .fab.active .fab-secondary {
   opacity: 1;
   transform: rotate(0);
 }
-/* line 223, ../sass/main2.scss */
+/* line 256, ../sass/main2.scss */
 body .fab .fab-primary, body .fab .fab-secondary {
   transition: all 0.35s ease-in-out;
 }
-/* line 227, ../sass/main2.scss */
+/* line 260, ../sass/main2.scss */
 body .fab .fab-secondary {
   opacity: 0;
   transform: rotate(-225deg);

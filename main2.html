@@ -52,6 +52,8 @@
 <script type="text/javascript" src="./js/bgdraw.js"></script>
 <script type="text/javascript" src="./js/d3.v3.js"></script>
 <script type="text/javascript" src="./js/sliderbar.js"></script>
+<script type="text/javascript" src="./js/picview.js"></script>
+<script type="text/javascript" src="./js/menuview.js"></script>
 <script type="text/javascript">
 	$(function(){
 		
@@ -116,40 +118,7 @@
 			'top': (screen.height - _orih) / 2
 		});
 		
-		var _tempMenuObj;
-		$('.dropdown-menu > li').on({
-			click: function () {
-				if(_tempMenuObj !== this) {
-					$('.dropdown-menu > li').find('a').removeClass('add-bridge');
-					_tempMenuObj = this;
-					
-					$(this).find('a').toggleClass('add-bridge');
-					
-					$('.menu-content').remove();
-					
-					$(this).find('a').after('<div class="menu-content"></div>');
-					$('.menu-content').css({
-						'z-index': '99999998',
-						'width': '100%', // 用 screen width 去大概算出一列可以放幾個
-						'height': '10%',
-						'background': 'silver',
-						'position': 'absolute',
-						'margin-top': '-40px', //.dropdown-menu > li > a 的 CSS
-						'left': '200%',
-						'display': 'block'
-					});
-				}
-			}
-		});
 		
-		$('.menu-content').on('mouseleave', function(){
-			$('.menu-content').remove();
-		});
-		
-		$('.menu-bridge').on('mouseleave', function(){
-			$('.dropdown-menu > li').find('a').removeClass('add-bridge');
-			$('.menu-content').remove();
-		});
 		
 	});
 

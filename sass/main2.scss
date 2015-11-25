@@ -88,10 +88,43 @@ body {
 					position: absolute;
 					width: 200%;
 					height: 100%;
-					background: red;
+					// background: red;
 					opacity: 0.3;
 					bottom: 20px;
 					z-index: -999999;
+				}
+				
+				.menu-content {
+					height: 500px;
+					background: white;
+					box-shadow:4px 4px 12px 4px rgba(20%,20%,40%,0.5);
+					position: absolute;
+					margin-top: -40px;
+					left: 200%;
+					
+					.tab-content {
+						width: auto;
+						height: auto;
+						
+						.imgstyle {
+							width: 150px;
+							height: 150px;
+							float: left;
+							margin: 20px;
+							opacity: 0.5;
+							background: #DDDDDD;
+							
+							&:hover {
+								opacity: 1.0;
+								background: white;
+							}
+							
+							img {
+								max-width: 150px;
+								max-height: 150px;
+							}
+						}
+					}
 				}
 				
 				> li > a {
