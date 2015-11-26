@@ -54,16 +54,23 @@ $('.dropdown-menu > li > a').on({
 				});
 
 				$('.imgstyle img').click(function (e) {
-					console.log(e);					
-					// console.log($(this)[0].attributes.src.value);
 					var parentImgID = $(this)[0].id;
 					var parentImgPath = $(this)[0].attributes.src.value;
 					var currentCount = $('.' + parentImgID).length + 1;
 					var selfID = parentImgID + currentCount;
+					
 					var selfClass = parentImgID + " drag-img";
 					var currentDragImgCount = $('.drag-img').length + 1;
-					$('body').append('<img class="' + selfClass + '" id="' + selfID +  + '" src="' + parentImgPath + '" alt="">');
-					// $('#' + selfID).css({left:e.pageX, top:e.pageY});
+					$('body').append('<img id="' + selfID + '" class="' + selfClass + '" alt="">');
+					
+					var $newImg = $('#' + selfID);
+					$newImg.attr({'src':parentImgPath});
+					var newleft = $newImg[0].clientWidth / 2;
+					var newtop = $newImg[0].clientHeight / 2;
+					// $newImg.stop().animate({left : e.pageX - newleft, top: e.pageY - newtop});
+					$newImg.css({left : e.pageX - newleft, top: e.pageY - newtop, 'z-index': currentDragImgCount});
+					$newImg.draggabilly();
+					
 					_tempMenuObj = null;
 					$('.menu-content').remove();
 					$menuObj.removeClass('add-bridge');

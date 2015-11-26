@@ -16,6 +16,12 @@ body {
 		// background: salmon;
 	}
 	
+	.drag-img {
+		position: absolute;
+		width: 100px;
+		height: 100px;
+	}
+	
 	.DivSilderbar {
 		position: absolute;
 		display: block;
@@ -90,12 +96,12 @@ body {
 					height: 100%;
 					// background: red;
 					opacity: 0.3;
-					bottom: 20px;
+					top: 20px;
 					z-index: -999999;
 				}
 				
 				.menu-content {
-					height: 500px;
+					// height: 500px;
 					background: white;
 					box-shadow:4px 4px 12px 4px rgba(20%,20%,40%,0.5);
 					position: absolute;
