@@ -101,11 +101,13 @@ body {
 				}
 				
 				.menu-content {
+					border-radius: 0px 20px 20px 20px;
 					// height: 500px;
+					max-height: 500px;
 					background: white;
 					box-shadow:4px 4px 12px 4px rgba(20%,20%,40%,0.5);
 					position: absolute;
-					margin-top: -40px;
+					// margin-top: -40px;
 					left: 200%;
 					
 					.tab-content {

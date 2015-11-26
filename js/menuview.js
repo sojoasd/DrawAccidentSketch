@@ -10,19 +10,9 @@ $('.dropdown-menu > li > a').on({
 			$('.menu-content').remove();
 
 			$(this).after('<div class="menu-content"></div>');
-			// $('.menu-content').css({
-			// 	'z-index': '99999998',
-			// 	// 'width': '100%', // 用 screen width 去大概算出一列可以放幾個
-			// 	'height': '500px',
-			// 	'background': 'silver',
-			// 	'position': 'absolute',
-			// 	'margin-top': '-40px', //.dropdown-menu > li > a 的 CSS
-			// 	'left': '200%',
-			// 	'display': 'block'
-			// });
+			$('.menu-content').css({'margin-top': -(e.pageY / 2)}); //這個目前 menu 項目太少，還看不出來有問題
 			
 			var $menuObj = $(this);
-			
 			PicViewObj.GetPic(function (Obj) {
 				var HtmlTabTitleString = "";
 				var HtmlTabContentString = "";
