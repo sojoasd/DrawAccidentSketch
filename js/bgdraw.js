@@ -1,5 +1,5 @@
-var create_draw = function() {
-	
+var create_draw = function () {
+
 	var _domName;
 	var _svg;
 
@@ -16,7 +16,7 @@ var create_draw = function() {
 	var _xAxisGrid;
 
 	// 建立 svg 區塊
-	var create_svg = function() {
+	var create_svg = function () {
 		_svg = d3.select(_domName)
 			.append("svg")
 			.attr({
@@ -25,22 +25,22 @@ var create_draw = function() {
 				"height": _height
 			})
 			.style({
-				'border': '0px solid #000'
+				'border': '0px solid #000',
 			});
 	};
 
-	var create_scale = function() {
+	var create_scale = function () {
 		_scaleX = d3.scale.linear()
 			.range([0, _width])
 			.domain([0, _width]);
-
+			
 		_scaleY = d3.scale.linear()
 			.range([_height, 0])
 			.domain([_height, 0]);
 	};
 
 	// 建立 svg 內各種物件的條件 (但還沒建立)
-	var create_svg_frame = function() {
+	var create_svg_frame = function () {
 		/* 建立 X 軸的背景線條 */
 		_xAxisGrid = d3.svg.axis()
 			.scale(_scaleX)
@@ -58,7 +58,7 @@ var create_draw = function() {
 			.tickSize(-_width, 0);
 	};
 
-	var create_XY_Grid = function() {
+	var create_XY_Grid = function () {
 		_svg.append('g')
 			.call(_xAxisGrid)
 			.attr({
@@ -79,22 +79,22 @@ var create_draw = function() {
 	};
 
 	// 更新 Grid 的線條
-	var refresh_Grid_line = function() {
+	var refresh_Grid_line = function () {
 		_svg.select('.xAxisGrid')
 			.transition()
 			.duration(700)
-			.attr({'transform': 'translate(' + 0 + ',' + _height + ')'})
+			.attr({ 'transform': 'translate(' + 0 + ',' + _height + ')' })
 			.call(_xAxisGrid);
 
 		_svg.select('.yAxisGrid')
 			.transition()
 			.duration(700)
-			.attr({'transform': 'translate(' + 0 + ',' + 0 + ')'})
+			.attr({ 'transform': 'translate(' + 0 + ',' + 0 + ')' })
 			.call(_yAxisGrid);
 	};
 
 	return {
-		init: function($RuleData) {
+		init: function ($RuleData) {
 			// console.log($RuleData);
 			_domName = $RuleData.dom;
 			_width = $RuleData.width;
@@ -115,16 +115,16 @@ var create_draw = function() {
 			// 	refresh_Grid_line();
 			// }, 1500);
 		},
-		changes: function(newW, newH, Xcount, Ycount){
+		changes: function (newW, newH, Xcount, Ycount) {
 			_width = newW;
 			_height = newH;
 			_Xcount = Xcount;
 			_Ycount = Ycount;
-			
+
 			_svg.attr("width", newW).attr("height", newH);
 			create_scale();
 			create_svg_frame();
 			refresh_Grid_line();
 		}
 	}
-}();
+} ();

@@ -70,8 +70,8 @@
 
 		_oriw = $('body')[0].clientWidth;
 		_orih = $('body')[0].clientHeight;
-		_initCountX = Math.round(_oriw/10);
-		_initCountY = Math.round(_orih/10);
+		_initCountX = Math.round(_oriw/50);
+		_initCountY = Math.round(_orih/50);
 
 		var $RuleData = {
             'height': _orih,
@@ -84,6 +84,13 @@
         create_draw.init($RuleData);
 		
 		$('#DivSvg').draggabilly();
+		$('#DivSvg').css({
+			'left': 0,
+			'top': 0
+		});
+		$('#DivSvg').click(function () {
+			$('#DivSvg').draggabilly('enable');
+		});
 		
 		//建立 sliderbar 物件
 		var SliderbarObj = new SilderModel();
@@ -93,12 +100,19 @@
 		var _perX = 0;
 		SliderbarObj.circlesSlider(function(LargerProportion){
 			if(_perX == LargerProportion) return;
+			// var isBigOrSmall = true;
+			// if(_perX > LargerProportion) {
+			// 	isBigOrSmall = false;
+			// }
+			// console.log(isBigOrSmall);
+			
 			_perX = LargerProportion;
+			var newLarProNum = (_perX / 100);
 			
 			window.clearTimeout(_mainTimer);
 			_mainTimer = window.setTimeout(function(){
-				var w = _oriw * (_perX / 100);
-				var h = _orih * (_perX / 100);
+				var w = _oriw * newLarProNum;
+				var h = _orih * newLarProNum;
 				$('body').css({ 'width':w, 'height':h });
 				create_draw.changes(w, h, _initCountX, _initCountY);
 				$('#DivSvg').css({
@@ -106,17 +120,41 @@
 					'top': 0
 				});
 				
-				$('#DivSvg').css({
-					'left': (screen.width - w) / 2,
-					'top': (screen.height - h) / 2
+				if(LargerProportion !== 100){
+					$('#DivSvg').css({
+						'left': (screen.width - w) / 2,
+						'top': (screen.height - h) / 2,
+					});
+				}
+				
+				// $('#DivSvg').css({
+				// 	'left':  ($('#DivSvg')[0].offsetLeft * newLarProNum),
+				// 	'top':  ($('#DivSvg')[0].offsetTop * newLarProNum),
+				// });
+				
+				//調整圖片大小
+				SetTest(function(e){
+					$('.drag-img').css({
+						'width': e.imgW * newLarProNum,
+						'height': e.imgH * newLarProNum,
+					});
+					var allimg = $('.drag-img');
+					for(var i = 0; i < allimg.length; i++) {
+						// console.log($(allimg[i]));
+						$(allimg[i]).css({
+							// 'left': $(allimg[i])[0].offsetLeft * newLarProNum,
+							// 'top': $(allimg[i])[0].offsetTop * newLarProNum,
+						});
+					}
 				});
+				
 			},1000);
 		});
 		
-		$('#DivSvg').css({
-			'left': (screen.width - _oriw) / 2,
-			'top': (screen.height - _orih) / 2
-		});
+		// $('#DivSvg').css({
+		// 	'left': (screen.width - _oriw) / 2,
+		// 	'top': (screen.height - _orih) / 2
+		// });
 		
 		
 		

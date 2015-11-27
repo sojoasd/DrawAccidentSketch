@@ -16,7 +16,7 @@ var SilderModel = function () {
 
 		_self._sliderbardrag = _self.$sliderbarDrag.data('draggabilly');
 
-		_self._LargerProportionNum = 900;
+		_self._LargerProportionNum = 100;
 
 		_self.$sliderbarDrag.on('dragMove', function (event, pointer) {
 			var $el = $(this).parent().parent().find('.slider-tips');

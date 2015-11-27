@@ -2,7 +2,7 @@ var PicViewModel = function () {
 
 	var _self = this;
 
-	this.GetPic = function (callback) {
+	this.GetPic = function (imgTypeName, callback) {
 		
 		var CarArr = {
 			'van': {
