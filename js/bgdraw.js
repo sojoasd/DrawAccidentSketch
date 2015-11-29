@@ -93,12 +93,18 @@ var create_draw = function () {
 			.call(_yAxisGrid);
 	};
 	
-	var create_fixed_point = function(){
-		$('body').append('<span class="fixed-point"></span>');
-		$('.fixed-point').css({
+	//移動畫面時會用到
+	var create_center_point = function(){
+		$('body').append('<span class="center-point"></span>');
+		$('.center-point').css({
 			'left': screen.availWidth / 2,
 			'top': screen.availHeight / 2
 		});
+	};
+	
+	//移動任何交通物件時會用到
+	var create_fixed_point = function(){
+		$(_domName).append('<span class="fixed-point"></span>');
 	};
 
 	return {
@@ -114,6 +120,7 @@ var create_draw = function () {
 			create_scale();
 			create_svg_frame();
 			create_XY_Grid();
+			create_center_point();
 			create_fixed_point();
 			// timer = window.setTimeout(function() {
 			// 	_width = 1500;

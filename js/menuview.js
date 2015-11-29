@@ -43,7 +43,7 @@ $('.dropdown-menu > li > a').on({
 				$(activeID).addClass('active');
 				
 				$('.menu-content').find('.nav-tabs').css({ 'width': screen.width * (3 / 4) + 'px' });
-
+				
 				$.each(Obj, function (key, objs) {
 					$.each(objs, function(index, value){
 						$('#' + key).append('<div class="imgstyle"><img id="' + index + '" src="' + value + '" alt=""></div>');

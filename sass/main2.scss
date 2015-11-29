@@ -14,6 +14,16 @@ body {
 	
 	#DivSvg {
 		// background: salmon;
+		.fixed-point {
+			position: absolute;
+			background: blue;
+			width: 10px;
+			height: 10px;
+			display: block;
+			z-index: 99999999;
+			left: 0;
+			top: 0;
+		}
 	}
 	
 	.drag-img {
@@ -59,7 +69,7 @@ body {
 		}
 	}
 	
-	.fixed-point {
+	.center-point {
 		position: absolute;
 		background: red;
 		width: 10px;
