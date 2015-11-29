@@ -58,6 +58,15 @@ body {
 			margin-left: 20px;
 		}
 	}
+	
+	.fixed-point {
+		position: absolute;
+		background: red;
+		width: 10px;
+		height: 10px;
+		display: block;
+		z-index: 99999999;
+	}
 
 	.fab {
 		cursor: pointer;

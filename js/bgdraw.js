@@ -92,6 +92,14 @@ var create_draw = function () {
 			.attr({ 'transform': 'translate(' + 0 + ',' + 0 + ')' })
 			.call(_yAxisGrid);
 	};
+	
+	var create_fixed_point = function(){
+		$('body').append('<span class="fixed-point"></span>');
+		$('.fixed-point').css({
+			'left': screen.availWidth / 2,
+			'top': screen.availHeight / 2
+		});
+	};
 
 	return {
 		init: function ($RuleData) {
@@ -106,7 +114,7 @@ var create_draw = function () {
 			create_scale();
 			create_svg_frame();
 			create_XY_Grid();
-
+			create_fixed_point();
 			// timer = window.setTimeout(function() {
 			// 	_width = 1500;
 			// 	_height = 1000;
