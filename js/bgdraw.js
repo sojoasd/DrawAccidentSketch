@@ -48,7 +48,7 @@ var create_draw = function () {
 			.ticks(_Xcount)
 			.tickFormat("") // tickFormat 針對每一個刻度的數字，可設定為空值
 			.tickSize(-_height, 0);
-
+			
 		/* 建立 Y 軸的背景線條 */
 		_yAxisGrid = d3.svg.axis()
 			.scale(_scaleY)

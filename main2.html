@@ -83,13 +83,24 @@
 		
         create_draw.init($RuleData);
 		
-		$('#DivSvg').draggabilly();
+		var $DivSvgDrag = $('#DivSvg').draggabilly();
 		$('#DivSvg').css({
 			'left': 0,
 			'top': 0
+		})
+		.attr({
+			'data-left': 0,
+			'data-top': 0
 		});
 		$('#DivSvg').click(function () {
-			$('#DivSvg').draggabilly('enable');
+			$DivSvgDrag = $('#DivSvg').draggabilly('enable');
+		});
+		
+		$DivSvgDrag.on('dragEnd', function( event, pointer, moveVector ) {
+			$DivSvgDrag.attr({
+				'data-left': $('#DivSvg')[0].offsetLeft,
+				'data-top': $('#DivSvg')[0].offsetTop
+			});
 		});
 		
 		//建立 sliderbar 物件
@@ -100,68 +111,48 @@
 		var _perX = 0;
 		SliderbarObj.circlesSlider(function(LargerProportion){
 			if(_perX == LargerProportion) return;
-			// var isBigOrSmall = true;
-			// if(_perX > LargerProportion) {
-			// 	isBigOrSmall = false;
-			// }
-			// console.log(isBigOrSmall);
 			
 			_perX = LargerProportion;
-			var newLarProNum = (_perX / 100);
 			
 			window.clearTimeout(_mainTimer);
 			_mainTimer = window.setTimeout(function(){
-				var w = _oriw * newLarProNum;
-				var h = _orih * newLarProNum;
+				var w = _oriw * (_perX / 100);
+				var h = _orih * (_perX / 100);
 				$('body').css({ 'width':w, 'height':h });
 				create_draw.changes(w, h, _initCountX, _initCountY);
+				
 				$('#DivSvg').css({
-					'left': 0,
-					'top': 0
+					'left': Number($('#DivSvg').attr('data-left')),
+					'top': Number($('#DivSvg').attr('data-top')),
 				});
 				
-				if(LargerProportion !== 100){
-					$('#DivSvg').css({
-						'left': (screen.availWidth - w) / 2,
-						'top': (screen.availHeight - h) / 2,
-					});
-					
-					$('.center-point').css({
-						'left': screen.availWidth / 2,
-						'top': screen.availHeight / 2
-					});
-				}
-				
-				// $('#DivSvg').css({
-				// 	'left':  ($('#DivSvg')[0].offsetLeft * newLarProNum),
-				// 	'top':  ($('#DivSvg')[0].offsetTop * newLarProNum),
-				// });
+				$('.center-point').css({
+					'left': screen.availWidth / 2,
+					'top': screen.availHeight / 2
+				});
 				
 				//調整圖片大小
 				SetTest(function(e){
 					$('.drag-img').css({
-						'width': e.imgW * newLarProNum,
-						'height': e.imgH * newLarProNum,
+						'width': e.imgW * (_perX / 100),
+						'height': e.imgH * (_perX / 100),
 					});
 					var allimg = $('.drag-img');
+					
 					for(var i = 0; i < allimg.length; i++) {
-						// console.log($(allimg[i]));
+						var oritimes = Number($(allimg[i]).attr('data-times'));
 						$(allimg[i]).css({
-							// 'left': $(allimg[i])[0].offsetLeft * newLarProNum,
-							// 'top': $(allimg[i])[0].offsetTop * newLarProNum,
+							'left': ($(allimg[i])[0].offsetLeft / oritimes) * (_perX / 100),
+							'top': ($(allimg[i])[0].offsetTop / oritimes) * (_perX / 100),
 						});
+						
+						//紀錄這個物件上次乘於的「倍數」
+						$(allimg[i]).attr({'data-times': (_perX / 100)});
 					}
 				});
 				
 			},1000);
 		});
-		
-		// $('#DivSvg').css({
-		// 	'left': (screen.width - _oriw) / 2,
-		// 	'top': (screen.height - _orih) / 2
-		// });
-		
-		
 		
 	});
 

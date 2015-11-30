@@ -21,6 +21,7 @@ $('.dropdown-menu > li > a').on({
 			
 			var $menuObj = $(this);
 			PicViewObj.GetPic(imgTypeName, function (Obj) {
+				// console.log(Obj);return;
 				var HtmlTabTitleString = "";
 				var HtmlTabContentString = "";
 				HtmlTabTitleString += '<ul class="nav nav-tabs" role="tablist">';
@@ -51,6 +52,7 @@ $('.dropdown-menu > li > a').on({
 				});
 
 				$('.imgstyle img').click(function (e) {
+					console.log(e);
 					var parentImgID = $(this)[0].id;
 					var parentImgPath = $(this)[0].attributes.src.value;
 					var currentCount = $('.' + parentImgID).length + 1;
@@ -61,7 +63,10 @@ $('.dropdown-menu > li > a').on({
 					$('#DivSvg').append('<img id="' + selfID + '" class="' + selfClass + '" alt="">');
 					
 					var $newImg = $('#' + selfID);
-					$newImg.attr({'src':parentImgPath});
+					$newImg.attr({
+						'src':parentImgPath,
+						'data-times': 1
+					});
 					var newleft = $newImg[0].clientWidth / 2;
 					var newtop = $newImg[0].clientHeight / 2;
 					_imgW = $newImg[0].clientWidth;
