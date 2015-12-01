@@ -1,10 +1,21 @@
 var PicViewObj = new PicViewModel();
 var _tempMenuObj;
 
-var _imgW;
-var _imgH;
 var _imgLeft;
 var _imgTop;
+
+var _perX = 100;
+var SetPer = function(e){
+	console.log(e);
+	_perX = e;
+};
+
+var _typeWHObj = {
+	'Car':[0, 0],
+	'Person':[0, 0],
+	'Road':[0, 0],
+	'Sign':[0, 0],
+};
 
 $('.dropdown-menu > li > a').on({
 	click: function (e) {
@@ -20,8 +31,26 @@ $('.dropdown-menu > li > a').on({
 			$('.menu-content').css({'margin-top': -(e.pageY / 2)}); //這個目前 menu 項目太少，還看不出來有問題
 			
 			var $menuObj = $(this);
-			PicViewObj.GetPic(imgTypeName, function (Obj) {
-				// console.log(Obj);return;
+			PicViewObj.GetPic(imgTypeName, function (data) {
+				var Obj;
+				switch($menuObj[0].id){
+					case "Car":
+						Obj = data.Car;
+					break;
+					
+					case "Person":
+						Obj = data.Person;
+					break;
+					
+					case "Road":
+						Obj = data.Road;
+					break;
+					
+					case "Sign":
+						Obj = data.Sign;
+					break;
+				}
+				
 				var HtmlTabTitleString = "";
 				var HtmlTabContentString = "";
 				HtmlTabTitleString += '<ul class="nav nav-tabs" role="tablist">';
@@ -52,7 +81,7 @@ $('.dropdown-menu > li > a').on({
 				});
 
 				$('.imgstyle img').click(function (e) {
-					console.log(e);
+					// console.log($(e.currentTarget).closest('.menu-content').prev()[0].id);
 					var parentImgID = $(this)[0].id;
 					var parentImgPath = $(this)[0].attributes.src.value;
 					var currentCount = $('.' + parentImgID).length + 1;
@@ -65,22 +94,32 @@ $('.dropdown-menu > li > a').on({
 					var $newImg = $('#' + selfID);
 					$newImg.attr({
 						'src':parentImgPath,
-						'data-times': 1
+						'data-times': 1 * 
 					});
+					
+					var typeName = $(e.currentTarget).closest('.menu-content').prev()[0].id;
+					SetTypeNameWH(typeName, $newImg[0].clientWidth, $newImg[0].clientHeight);
+					
 					var newleft = $newImg[0].clientWidth / 2;
 					var newtop = $newImg[0].clientHeight / 2;
-					_imgW = $newImg[0].clientWidth;
-					_imgH = $newImg[0].clientHeight;
+					
 					// console.log($('#DivSvg'));
 					// $newImg.stop().animate({
 					// 	left : e.pageX - newleft - $('#DivSvg')[0].offsetLeft, 
 					// 	top: e.pageY - newtop - $('#DivSvg')[0].offsetTop, 
 					// 	'z-index': currentDragImgCount
 					// });
+					
+					SetPer = function(e){
+						_perX = e;
+					};
+					
 					$newImg.css({
-						left : e.pageX - newleft - $('#DivSvg')[0].offsetLeft, 
-						top: e.pageY - newtop - $('#DivSvg')[0].offsetTop, 
-						'z-index': currentDragImgCount
+						'left' : e.pageX - newleft - $('#DivSvg')[0].offsetLeft, 
+						'top': e.pageY - newtop - $('#DivSvg')[0].offsetTop, 
+						'z-index': currentDragImgCount,
+						'width': $newImg[0].clientWidth * (_perX / 100),
+						'height': $newImg[0].clientHeight * (_perX / 100),
 					});
 					$newImg.draggabilly();
 					$newImg.on({
@@ -103,8 +142,28 @@ $('.dropdown-menu > li > a').on({
 	}
 });
 
+var SetTypeNameWH = function(typeName, w, h){
+	switch(typeName){
+		case "Car":
+			_typeWHObj.Car = [w, h];
+			break;
+
+		case "Person":
+			_typeWHObj.Person = [w, h];
+			break;
+
+		case "Road":
+			_typeWHObj.Road = [w, h];
+			break;
+
+		case "Sign":
+			_typeWHObj.Sign = [w, h];
+			break;
+	}
+};
+
 var SetTest = function(callback){
-	callback({'imgW': _imgW, 'imgH': _imgH});
+	callback(_typeWHObj);
 };
 
 $('.show-on-hover').hover(function () {

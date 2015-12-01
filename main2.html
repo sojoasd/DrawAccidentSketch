@@ -29,10 +29,10 @@
 					</button>
 				</div>
 				<ul class="dropdown-menu dropdown-menu-right" role="menu">
-					<li><a href="#" data-toggle="tooltip" data-placement="left" title="Car"><i class="fa fa-car"></i></a></li>
-					<li><a href="#" data-toggle="tooltip" data-placement="left" title="Person"><i class="fa fa-male"></i></a></li>
-					<li><a href="#" data-toggle="tooltip" data-placement="left" title="Road"><i class="fa fa-road"></i></a></li>
-					<li><a href="#" data-toggle="tooltip" data-placement="left" title="Sign"><i class="fa fa-map-signs"></i></a></li>
+					<li><a href="#" data-toggle="tooltip" data-placement="left" class="menu-li" id="Car" title="Car"><i class="fa fa-car"></i></a></li>
+					<li><a href="#" data-toggle="tooltip" data-placement="left" class="menu-li" id="Person" title="Person"><i class="fa fa-male"></i></a></li>
+					<li><a href="#" data-toggle="tooltip" data-placement="left" class="menu-li" id="Road" title="Road"><i class="fa fa-road"></i></a></li>
+					<li><a href="#" data-toggle="tooltip" data-placement="left" class="menu-li" id="Sign" title="Sign"><i class="fa fa-map-signs"></i></a></li>
 					<div class="menu-bridge"></div>
 				</ul>
 			</div>
@@ -63,6 +63,8 @@
 		var _initCountY;
 		
 		var _mainTimer;
+		
+		var _perX = 100; //放大縮小的比例值，未來位在除以 100
 		
 		$('.fab').hover(function () {
 			$(this).toggleClass('active');
@@ -108,11 +110,11 @@
 		SliderbarObj.CreateCirclesSlider();
 		
 		//取得 sliderbar 的結果
-		var _perX = 0;
 		SliderbarObj.circlesSlider(function(LargerProportion){
 			if(_perX == LargerProportion) return;
 			
 			_perX = LargerProportion;
+			SetPer(_perX);
 			
 			window.clearTimeout(_mainTimer);
 			_mainTimer = window.setTimeout(function(){
@@ -132,11 +134,20 @@
 				});
 				
 				//調整圖片大小
-				SetTest(function(e){
-					$('.drag-img').css({
-						'width': e.imgW * (_perX / 100),
-						'height': e.imgH * (_perX / 100),
+				SetTest(function(obj){
+					// console.log(obj);return;
+					
+					$.each(obj, function (key, value) {
+						$('.' + key + '-img').css({
+							'width': value[0] * (_perX / 100),
+							'height': value[1] * (_perX / 100),
+						});
 					});
+					
+					// $('.drag-img').css({
+					// 	'width': e.imgW * (_perX / 100),
+					// 	'height': e.imgH * (_perX / 100),
+					// });
 					var allimg = $('.drag-img');
 					
 					for(var i = 0; i < allimg.length; i++) {
@@ -153,6 +164,7 @@
 				
 			},1000);
 		});
+		
 		
 	});
 

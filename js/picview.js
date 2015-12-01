@@ -55,6 +55,6 @@ var PicViewModel = function () {
 			'Sign': SignArr,
 		};
 
-		callback(CarArr);
+		callback(AllObj);
 	};
 };
