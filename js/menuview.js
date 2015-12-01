@@ -5,10 +5,7 @@ var _imgLeft;
 var _imgTop;
 
 var _perX = 100;
-var SetPer = function(e){
-	console.log(e);
-	_perX = e;
-};
+var SetPer = function(){};
 
 var _typeWHObj = {
 	'Car':[0, 0],
@@ -81,7 +78,12 @@ $('.dropdown-menu > li > a').on({
 				});
 
 				$('.imgstyle img').click(function (e) {
-					// console.log($(e.currentTarget).closest('.menu-content').prev()[0].id);
+					
+					//取得最新放大倍數
+					SetPer(function(e){
+						_perX = e;
+					});
+					
 					var parentImgID = $(this)[0].id;
 					var parentImgPath = $(this)[0].attributes.src.value;
 					var currentCount = $('.' + parentImgID).length + 1;
@@ -94,7 +96,7 @@ $('.dropdown-menu > li > a').on({
 					var $newImg = $('#' + selfID);
 					$newImg.attr({
 						'src':parentImgPath,
-						'data-times': 1 * 
+						'data-times': 1 * (_perX / 100)
 					});
 					
 					var typeName = $(e.currentTarget).closest('.menu-content').prev()[0].id;
@@ -109,10 +111,6 @@ $('.dropdown-menu > li > a').on({
 					// 	top: e.pageY - newtop - $('#DivSvg')[0].offsetTop, 
 					// 	'z-index': currentDragImgCount
 					// });
-					
-					SetPer = function(e){
-						_perX = e;
-					};
 					
 					$newImg.css({
 						'left' : e.pageX - newleft - $('#DivSvg')[0].offsetLeft, 

@@ -114,7 +114,11 @@
 			if(_perX == LargerProportion) return;
 			
 			_perX = LargerProportion;
-			SetPer(_perX);
+			// SetPer(_perX);
+			
+			SetPer = function(callback){
+				callback(_perX);
+			}
 			
 			window.clearTimeout(_mainTimer);
 			_mainTimer = window.setTimeout(function(){
@@ -165,6 +169,10 @@
 			},1000);
 		});
 		
+		// $('#DivSvg').css({
+		// 	'left': (screen.availWidth - _oriw) / 2,
+		// 	'top': (screen.availHeight - _orih) / 2
+		// });
 		
 	});
 
