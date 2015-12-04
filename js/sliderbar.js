@@ -39,14 +39,14 @@ var SilderModel = function () {
 				var $el = $(this).parent().parent().find('.slider-tips');
 				$el.css({ 'opacity': 0.0 });
 			},
-			// mouseover: function () {
-			// 	var $el = $(this).parent().parent().find('.slider-tips');
-			// 	$el.css({ 'opacity': 1.0 });
-			// 	$el.html(" " + (100 + (_self._sliderbardrag.position.x / 500).toFixed(2) * _self._LargerProportionNum) + " % ");
-			// 	$('.silder-bar').data("percents", { perX: (100 + (_self._sliderbardrag.position.x / 500).toFixed(2) * _self._LargerProportionNum) });
-			// 	callback((100 + (_self._sliderbardrag.position.x / 500).toFixed(2) * _self._LargerProportionNum)); 
-			// 	//因為 $('.silder-bar-lines').on() 事件結束後，球會跑到目的地，再觸發 mouseover 事件，就會回傳數值
-			// }
+			mouseover: function () {
+				var $el = $(this).parent().parent().find('.slider-tips');
+				$el.css({ 'opacity': 1.0 });
+				$el.html(" " + (100 + (_self._sliderbardrag.position.x / 500).toFixed(2) * _self._LargerProportionNum) + " % ");
+				// $('.silder-bar').data("percents", { perX: (100 + (_self._sliderbardrag.position.x / 500).toFixed(2) * _self._LargerProportionNum) });
+				// callback((100 + (_self._sliderbardrag.position.x / 500).toFixed(2) * _self._LargerProportionNum)); 
+				//因為 $('.silder-bar-lines').on() 事件結束後，球會跑到目的地，再觸發 mouseover 事件，就會回傳數值
+			}
 		});
 
 		$('.silder-bar-lines').on({

@@ -91,7 +91,7 @@ $('.dropdown-menu > li > a').on({
 					
 					var selfClass = parentImgID + " drag-img" + " " + imgTypeName + "-img";
 					var currentDragImgCount = $('.drag-img').length + 1;
-					$('#DivSvg').append('<img id="' + selfID + '" class="' + selfClass + '" alt="">');
+					$('#DivSvg').append('<div style="background:red" class="img-parent"><img id="' + selfID + '" class="' + selfClass + '" alt=""></div>');
 					
 					var $newImg = $('#' + selfID);
 					$newImg.attr({
@@ -123,6 +123,9 @@ $('.dropdown-menu > li > a').on({
 					$newImg.on({
 						pointerDown: function (event, pointer) {
 							$('#DivSvg').draggabilly('disable');
+						},
+						click: function(){
+							console.log($(this).parent());
 						}
 					});
 					
